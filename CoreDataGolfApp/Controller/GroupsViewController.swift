@@ -11,9 +11,6 @@ import UIKit
 class GroupsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var golferCollectionView: UICollectionView!
-    
-    
-    var golfer: Golfer?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,6 +14,6 @@ class GolferCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var golferNameLabel: UILabel!
     @IBOutlet weak var golferHandicapLabel: UILabel!
     
-    
+   
     
 }

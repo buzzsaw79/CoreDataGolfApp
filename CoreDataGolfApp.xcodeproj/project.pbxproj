@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30101B01203B6EDD0087BB06 /* Golfer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30101AFF203B6EDD0087BB06 /* Golfer+CoreDataClass.swift */; };
+		30101B02203B6EDD0087BB06 /* Golfer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30101B00203B6EDD0087BB06 /* Golfer+CoreDataProperties.swift */; };
+		30101B05203B6F080087BB06 /* Tournee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30101B03203B6F080087BB06 /* Tournee+CoreDataClass.swift */; };
+		30101B06203B6F080087BB06 /* Tournee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30101B04203B6F080087BB06 /* Tournee+CoreDataProperties.swift */; };
 		303D038A203879F900A6AB4C /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D0389203879F900A6AB4C /* DesignableView.swift */; };
 		30A846E8203324020069DD30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A846E7203324020069DD30 /* AppDelegate.swift */; };
 		30A846EA203324020069DD30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A846E9203324020069DD30 /* ViewController.swift */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30101AFF203B6EDD0087BB06 /* Golfer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Golfer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		30101B00203B6EDD0087BB06 /* Golfer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Golfer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		30101B03203B6F080087BB06 /* Tournee+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tournee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		30101B04203B6F080087BB06 /* Tournee+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tournee+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		303D0389203879F900A6AB4C /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		30A846E4203324020069DD30 /* CoreDataGolfApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataGolfApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A846E7203324020069DD30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +120,10 @@
 		30F6E3F0203B467A00E25949 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30101B03203B6F080087BB06 /* Tournee+CoreDataClass.swift */,
+				30101B04203B6F080087BB06 /* Tournee+CoreDataProperties.swift */,
+				30101AFF203B6EDD0087BB06 /* Golfer+CoreDataClass.swift */,
+				30101B00203B6EDD0087BB06 /* Golfer+CoreDataProperties.swift */,
 				30A846EE203324020069DD30 /* CoreDataGolfApp.xcdatamodeld */,
 			);
 			path = Model;
@@ -196,8 +208,12 @@
 				303D038A203879F900A6AB4C /* DesignableView.swift in Sources */,
 				30F6E3ED203B462F00E25949 /* UIColor+CustomColors.swift in Sources */,
 				30A846E8203324020069DD30 /* AppDelegate.swift in Sources */,
+				30101B02203B6EDD0087BB06 /* Golfer+CoreDataProperties.swift in Sources */,
+				30101B05203B6F080087BB06 /* Tournee+CoreDataClass.swift in Sources */,
+				30101B06203B6F080087BB06 /* Tournee+CoreDataProperties.swift in Sources */,
 				30A846F0203324020069DD30 /* CoreDataGolfApp.xcdatamodeld in Sources */,
 				30F6E3E6203B24A100E25949 /* GolferCollectionViewCell.swift in Sources */,
+				30101B01203B6EDD0087BB06 /* Golfer+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
