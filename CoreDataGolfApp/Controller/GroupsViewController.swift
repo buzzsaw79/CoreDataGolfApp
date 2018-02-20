@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class GroupsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var golferCollectionView: UICollectionView!
 
@@ -17,8 +17,20 @@ class GroupsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         golferCollectionView.delegate = self
         golferCollectionView.dataSource = self
+        
 
-        // Do any additional setup after loading the view.
+        let golfers = Golfer.golferDictionary
+        print(golfers)
+        
+        for golfer in golfers {
+            
+            let golfer = Golfer.golferFetchRequest()
+            
+            
+        }
+        
+        
+        
     }
         //MARK: - CollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -35,14 +47,21 @@ class GroupsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: <#T##String#>, withReuseIdentifier: <#T##String#>, for: <#T##IndexPath#>)
-//        
-//        headerView.backgroundColor = .richRed
-//        
-//        return headerView as! UICollectionReusableView
-//    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "groupsSectionHeaderView", for: indexPath) as! groupsSectionHeaderView
+        
+        let headerTitleString = "Group Number \(indexPath.section+1)"
+        
+        headerView.headerTitleLabel.text = headerTitleString
+        
+        return headerView
+    }
+    // Set height for header cell
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: 0.0, height: collectionView.frame.height/15)
+    }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4

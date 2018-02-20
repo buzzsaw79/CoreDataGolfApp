@@ -19,6 +19,9 @@
 		30A846F2203324020069DD30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A846F1203324020069DD30 /* Assets.xcassets */; };
 		30A846F5203324020069DD30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A846F3203324020069DD30 /* LaunchScreen.storyboard */; };
 		30A8470720381C000069DD30 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A8470620381C000069DD30 /* GradientView.swift */; };
+		30D166BB203C5747004B4D6E /* AddGolfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D166BA203C5747004B4D6E /* AddGolfViewController.swift */; };
+		30D166BE203C966D004B4D6E /* today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D166BC203C966D004B4D6E /* today.swift */; };
+		30D166BF203C966D004B4D6E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D166BD203C966D004B4D6E /* Alert.swift */; };
 		30F6E3E4203B23B900E25949 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F6E3E3203B23B900E25949 /* GroupsViewController.swift */; };
 		30F6E3E6203B24A100E25949 /* GolferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F6E3E5203B24A100E25949 /* GolferCollectionViewCell.swift */; };
 		30F6E3E8203B43F600E25949 /* ProjectColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F6E3E7203B43F600E25949 /* ProjectColors.xcassets */; };
@@ -40,6 +43,9 @@
 		30A846F4203324020069DD30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30A846F6203324020069DD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A8470620381C000069DD30 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		30D166BA203C5747004B4D6E /* AddGolfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGolfViewController.swift; sourceTree = "<group>"; };
+		30D166BC203C966D004B4D6E /* today.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = today.swift; sourceTree = "<group>"; };
+		30D166BD203C966D004B4D6E /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		30F6E3E3203B23B900E25949 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		30F6E3E5203B24A100E25949 /* GolferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolferCollectionViewCell.swift; sourceTree = "<group>"; };
 		30F6E3E7203B43F600E25949 /* ProjectColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ProjectColors.xcassets; sourceTree = "<group>"; };
@@ -87,6 +93,8 @@
 		30F6E3E9203B45C500E25949 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				30D166BC203C966D004B4D6E /* today.swift */,
+				30D166BD203C966D004B4D6E /* Alert.swift */,
 				30F6E3EC203B462F00E25949 /* UIColor+CustomColors.swift */,
 				30A846E7203324020069DD30 /* AppDelegate.swift */,
 				30A846F1203324020069DD30 /* Assets.xcassets */,
@@ -100,6 +108,7 @@
 		30F6E3EE203B465000E25949 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				30D166BA203C5747004B4D6E /* AddGolfViewController.swift */,
 				30A846E9203324020069DD30 /* ViewController.swift */,
 				30F6E3E3203B23B900E25949 /* GroupsViewController.swift */,
 			);
@@ -203,7 +212,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30F6E3E4203B23B900E25949 /* GroupsViewController.swift in Sources */,
+				30D166BE203C966D004B4D6E /* today.swift in Sources */,
 				30A8470720381C000069DD30 /* GradientView.swift in Sources */,
+				30D166BF203C966D004B4D6E /* Alert.swift in Sources */,
 				30A846EA203324020069DD30 /* ViewController.swift in Sources */,
 				303D038A203879F900A6AB4C /* DesignableView.swift in Sources */,
 				30F6E3ED203B462F00E25949 /* UIColor+CustomColors.swift in Sources */,
@@ -212,6 +223,7 @@
 				30101B05203B6F080087BB06 /* Tournee+CoreDataClass.swift in Sources */,
 				30101B06203B6F080087BB06 /* Tournee+CoreDataProperties.swift in Sources */,
 				30A846F0203324020069DD30 /* CoreDataGolfApp.xcdatamodeld in Sources */,
+				30D166BB203C5747004B4D6E /* AddGolfViewController.swift in Sources */,
 				30F6E3E6203B24A100E25949 /* GolferCollectionViewCell.swift in Sources */,
 				30101B01203B6EDD0087BB06 /* Golfer+CoreDataClass.swift in Sources */,
 			);

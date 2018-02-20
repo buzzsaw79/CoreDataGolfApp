@@ -17,3 +17,18 @@ class GolferCollectionViewCell: UICollectionViewCell {
    
     
 }
+
+
+class groupsSectionHeaderView: UICollectionReusableView {
+    
+    @IBOutlet weak var headerTitleLabel: UILabel!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.backgroundColor = UIColor(named: "AccentColor")
+        
+        
+ 
+    }
+    
+}

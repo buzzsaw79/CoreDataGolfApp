@@ -6,10 +6,19 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+        <array key="AvenirNextCondensed.ttc">
+            <string>AvenirNextCondensed-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Gradient Messing-->
         <scene sceneID="tne-QT-ifu">
@@ -53,25 +62,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k9H-r0-K0E" customClass="DesignableView" customModule="CoreDataGolfApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.63137254899999995" green="0.82524985210000001" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                        <color key="value" red="0.63137254899999995" green="0.82524985210000001" blue="0.91710069439999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                        <color key="value" red="0.79858175040000001" green="1" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="thirdColor">
-                                        <color key="value" red="0.23529411759999999" green="0.716796875" blue="0.067754315029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k9Y-Kt-rfa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P8B-0Z-DLp">
                                     <size key="itemSize" width="80" height="120"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
@@ -114,9 +108,21 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2qX-os-orX">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="groupsSectionHeaderView" id="2qX-os-orX" customClass="groupsSectionHeaderView" customModule="CoreDataGolfApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbk-es-UdS">
+                                            <rect key="frame" x="8" y="8" width="359" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <connections>
+                                        <outlet property="headerTitleLabel" destination="Cbk-es-UdS" id="zxa-54-D7R"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
@@ -149,8 +155,135 @@
             </objects>
             <point key="canvasLocation" x="162" y="235"/>
         </scene>
+        <!--Add Golfer View Controller-->
+        <scene sceneID="JWk-lN-Qjm">
+            <objects>
+                <viewController title="Add Golfer View Controller " id="LR7-5u-xbc" userLabel="Add Golfer View Controller" customClass="AddGolfViewController" customModule="TuesdayGolfClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CoT-A5-7LQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="aZj-Ax-ojT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ut0-WF-NH2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head_unknown" translatesAutoresizingMaskIntoConstraints="NO" id="vdj-Ju-qix">
+                                <rect key="frame" x="102" y="43" width="160" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="Dgp-AF-bHw"/>
+                                    <constraint firstAttribute="width" constant="160" id="eqR-8Q-M3b"/>
+                                </constraints>
+                            </imageView>
+                            <stackView contentMode="redraw" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="2O4-BG-Fo1">
+                                <rect key="frame" x="16" y="254" width="343" height="176"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWJ-wu-xS7">
+                                        <rect key="frame" x="52.5" y="0.0" width="238.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Golfer Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I4N-OW-V8i">
+                                        <rect key="frame" x="52.5" y="26" width="238.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handicap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUH-gV-uzg">
+                                        <rect key="frame" x="52.5" y="60" width="238.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Golfer Handicap" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MEa-Hv-ZxQ">
+                                        <rect key="frame" x="52.5" y="86" width="238.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Membership No." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12d-jW-9uv">
+                                        <rect key="frame" x="52.5" y="120" width="238.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Golfer Membership Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvw-0D-hdt">
+                                        <rect key="frame" x="52.5" y="146" width="238.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.82524985210000001" green="0.774244029" blue="0.37522556350000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="nvw-0D-hdt" firstAttribute="width" secondItem="12d-jW-9uv" secondAttribute="width" id="JaJ-kN-7Ih"/>
+                                    <constraint firstItem="I4N-OW-V8i" firstAttribute="width" secondItem="MEa-Hv-ZxQ" secondAttribute="width" id="RBs-Pi-p5s"/>
+                                    <constraint firstItem="I4N-OW-V8i" firstAttribute="width" secondItem="sWJ-wu-xS7" secondAttribute="width" id="Vxu-af-pgM"/>
+                                    <constraint firstItem="I4N-OW-V8i" firstAttribute="width" secondItem="nvw-0D-hdt" secondAttribute="width" id="ait-a6-3Do"/>
+                                    <constraint firstItem="MEa-Hv-ZxQ" firstAttribute="width" secondItem="UUH-gV-uzg" secondAttribute="width" id="fqO-i9-s1I"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vM-Cl-pPS">
+                                <rect key="frame" x="140" y="602" width="95" height="45"/>
+                                <color key="backgroundColor" red="0.08825264126" green="0.37863418459999998" blue="0.28035753969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="Save Golfer">
+                                    <color key="titleShadowColor" red="0.50661264350000001" green="0.53798076920000004" blue="0.25207632369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveGolfer:" destination="LR7-5u-xbc" eventType="touchUpInside" id="Q9L-jP-IP1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHj-Oq-z1O">
+                                <rect key="frame" x="102" y="43" width="160" height="190"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addPicButton:" destination="LR7-5u-xbc" eventType="touchUpInside" id="H2Q-Yq-AIz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pHj-Oq-z1O" firstAttribute="top" secondItem="vdj-Ju-qix" secondAttribute="top" id="5JU-9O-imt"/>
+                            <constraint firstItem="pHj-Oq-z1O" firstAttribute="leading" secondItem="vdj-Ju-qix" secondAttribute="leading" id="5Mc-fy-2bU"/>
+                            <constraint firstItem="2O4-BG-Fo1" firstAttribute="top" secondItem="pHj-Oq-z1O" secondAttribute="bottom" constant="21" id="9ev-ql-g6m"/>
+                            <constraint firstItem="pHj-Oq-z1O" firstAttribute="bottom" secondItem="vdj-Ju-qix" secondAttribute="bottom" id="DRZ-Qx-aGy"/>
+                            <constraint firstItem="pHj-Oq-z1O" firstAttribute="leading" secondItem="Ut0-WF-NH2" secondAttribute="leadingMargin" constant="86" id="GIZ-he-Mr1"/>
+                            <constraint firstItem="aZj-Ax-ojT" firstAttribute="top" secondItem="0vM-Cl-pPS" secondAttribute="bottom" constant="20" id="Rri-Rg-6L5"/>
+                            <constraint firstItem="pHj-Oq-z1O" firstAttribute="top" secondItem="CoT-A5-7LQ" secondAttribute="bottom" constant="23" id="WGQ-Ne-mkr"/>
+                            <constraint firstItem="0vM-Cl-pPS" firstAttribute="centerX" secondItem="Ut0-WF-NH2" secondAttribute="centerX" id="Zqg-AI-yro"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2O4-BG-Fo1" secondAttribute="trailing" id="duK-pR-XlF"/>
+                            <constraint firstItem="2O4-BG-Fo1" firstAttribute="leading" secondItem="Ut0-WF-NH2" secondAttribute="leadingMargin" id="o7p-ox-239"/>
+                            <constraint firstItem="pHj-Oq-z1O" firstAttribute="trailing" secondItem="vdj-Ju-qix" secondAttribute="trailing" id="zSQ-4X-pQk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bkz-cG-jZ0"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New Golfer" id="rpF-q1-ju2">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RZY-j1-FMa">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancelBtnPressed:" destination="LR7-5u-xbc" id="u90-xt-rvY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="golferHandicapTextField" destination="MEa-Hv-ZxQ" id="FMj-IM-mig"/>
+                        <outlet property="golferImageView" destination="vdj-Ju-qix" id="Sha-Wf-kIi"/>
+                        <outlet property="golferMembershipNoTextField" destination="nvw-0D-hdt" id="nWK-AQ-m9q"/>
+                        <outlet property="golferNameTextField" destination="I4N-OW-V8i" id="xtD-m4-S0w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6I9-3j-txr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1983" y="233"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="head_unknown" width="16" height="16"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.67400002479553223" green="0.75" blue="0.55099999904632568" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="TableViewCellColor">
             <color red="0.63099998235702515" green="0.81599998474121094" blue="0.80299997329711914" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

@@ -13,7 +13,7 @@ import CoreData
 
 extension Golfer {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Golfer> {
+    @nonobjc public class func golferFetchRequest() -> NSFetchRequest<Golfer> {
         return NSFetchRequest<Golfer>(entityName: "Golfer")
     }
 
@@ -22,5 +22,8 @@ extension Golfer {
     @NSManaged public var name: String?
     @NSManaged public var scores: [String:Int]?
     @NSManaged public var winnings: Int16
+    
+    
+    
 
 }
