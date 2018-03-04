@@ -9,7 +9,10 @@
 import UIKit
 
 class GroupsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+        //MARK: - Properties and Outlets
+    var playersArray: [Golfer]?
+    var todaysTournee: Tournee?
+    
     @IBOutlet weak var golferCollectionView: UICollectionView!
 
     override func viewDidLoad() {

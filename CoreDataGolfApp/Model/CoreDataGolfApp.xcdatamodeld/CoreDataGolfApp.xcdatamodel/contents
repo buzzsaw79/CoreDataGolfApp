@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Golfer" representedClassName=".Golfer" syncable="YES">
-        <attribute name="handicap" optional="YES" attributeType="Integer 16" maxValueString="28" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="clubHandicap" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="handicap" optional="YES" attributeType="Decimal" maxValueString="28" defaultValueString="0.0" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scores" optional="YES" attributeType="Transformable" customClassName="[String:Int]" syncable="YES"/>
-        <attribute name="winnings" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="winnings" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <relationship name="playsInA" maxCount="1" deletionRule="Nullify" destinationEntity="Tournee" inverseName="hasEntrants" inverseEntity="Tournee" syncable="YES"/>
     </entity>
     <entity name="Tournee" representedClassName=".Tournee" syncable="YES">
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="day" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="playingGroups" optional="YES" attributeType="Transformable" customClassName="[[Golfer]]" syncable="YES"/>
-        <attribute name="prizeFund" optional="YES" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="prizeFund" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0" syncable="YES"/>
         <attribute name="scores" optional="YES" attributeType="Transformable" customClassName="[String:Int]" syncable="YES"/>
+        <relationship name="hasEntrants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Golfer" inverseName="playsInA" inverseEntity="Golfer" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Golfer" positionX="-54" positionY="-9" width="128" height="120"/>
-        <element name="Tournee" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Golfer" positionX="-54" positionY="-9" width="128" height="148"/>
+        <element name="Tournee" positionX="-414" positionY="-27" width="128" height="58"/>
     </elements>
 </model>
